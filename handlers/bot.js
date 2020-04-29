@@ -1,10 +1,10 @@
 const sapcai = require('sapcai').default
-const client = new sapcai('0a4f353f4e9bfaf61bf17937269a7692')
+const client = new sapcai('d8dff08560391c22ec34c15560fb01ea')
 const build = client.build
 
 exports.sendMessage = (req, res, next) => {
-    const rdm = Math.floor(Math.random() * (+99999999 - +1000000)) + +1000000
-    build.dialog({'type': 'text', content: req.body.message}, {conversationId: rdm})
+    
+    build.dialog({'type': 'text', content: req.body.message}, {conversationId: 100})
         .then(data => {
             res.status(200).json({'response': data})
         })
